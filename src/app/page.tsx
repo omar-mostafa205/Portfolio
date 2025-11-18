@@ -1,24 +1,19 @@
 import NavBar from "@/components/NavBar";
-import { Hero } from "@/components/Hero";
+import { Hero } from "@/components/sections/Hero";
 import MovingImages from "@/components/MovingImages";
-import Example from "@/components/Example";
-import ProjectsPortfolio from "@/components/ProjectsPortfolio";
-import TechArsenal from "@/components/TechArsenal";
-import { Contact } from "lucide-react";
-import ContactSection from "@/components/Contact";
-import Approach from "@/components/Approach";
-import { Footer } from "@/components/t";
-import { TextHoverEffect } from "@/components/ui/text-hover-effect";
+import ProjectsPortfolio from "@/components/sections/ProjectsPortfolio";
+import TechArsenal from "@/components/sections/TechArsenal";
+import ContactSection from "@/components/sections/Contact";
+import Approach from "@/components/sections/Approach";
+import Features from "@/components/sections/Features";
 
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-cente">
       <NavBar /> 
-      <section id="#hero">
-        <Hero />
-      </section>
+      <Hero />
       <MovingImages />  
-      <Example />
+      <Features />
       <ProjectsPortfolio /> 
       <Approach />
       <TechArsenal />

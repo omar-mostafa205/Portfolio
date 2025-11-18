@@ -1,3 +1,4 @@
+// NavBar.tsx
 "use client";
 import Image from 'next/image'
 import React from 'react'
@@ -17,10 +18,17 @@ const NavBar = () => {
         {
             name: "Contact",
             link: "#contact",
-
-        }
+        }       
     ]
-    
+    function handleSmoothScroll (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, link: string) {
+        e.preventDefault();
+        const targetElement = document.querySelector(link);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+
     return (
         <>
             <nav className='flex flex-row items-center justify-between mx-auto w-full max-w-[80rem] py-10 text-white px-8'>
@@ -31,14 +39,20 @@ const NavBar = () => {
                 <div>
                     <ul className='flex flex-row text-center gap-10'>
                         {navItems.map((item) => (
-                            <li key={item.name} className='hover:text-[#ccabff] cursor-pointer'>
-                                <a href={item.link}>{item.name}</a>
+                            <li key={item.name} className='hover:text-[#ccabff] cursor-pointer transition-colors duration-200'>
+                                <a 
+                                    href={item.link}
+                                    onClick={(e) => handleSmoothScroll(e, item.link)}
+                                >
+                                    {item.name}
+                                </a>
                             </li>
                         ))}
                     </ul>
                 </div>
                 
-                <a href="#about">
+                <a 
+                >
                     <button
                         className="flex cursor-pointer items-center gap-2 rounded-md px-6 py-3 font-medium text-white 
                         bg-gradient-to-r from-[#161A31] to-[#06091F] 

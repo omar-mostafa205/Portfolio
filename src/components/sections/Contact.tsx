@@ -1,7 +1,7 @@
 "use client";
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Mail, Copy, Check } from 'lucide-react';
-import { TextHoverEffect } from './ui/text-hover-effect';
+import { TextHoverEffect } from '../ui/text-hover-effect';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -21,7 +21,7 @@ export default function ContactSection() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     alert('Thank you! I will get back to you within 24h.');
@@ -34,7 +34,7 @@ export default function ContactSection() {
   };
 
   return (
-<div className="min-h-screen text-white p-8 md:p-16 lg:-mt-40">
+<section id='contact' className="min-h-screen text-white p-8 md:p-16 lg:-mt-40">
 <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16">
           <div className="space-y-8">
@@ -155,6 +155,6 @@ export default function ContactSection() {
       <div className='-mb-430 mt-40'>
       <TextHoverEffect text="OMAR" />
       </div>
-    </div>
+    </section>
   );
 }

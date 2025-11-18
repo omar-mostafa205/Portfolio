@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const Approach = () => {
   return (
-    <section className="w-full py-20">
+    <section id="approach" className="w-full py-20">
       <h1 className="text-5xl font-bold flex items-center justify-start text-white mb-12 ml-30 ">
         My <span className="text-white ml-2">approach</span>
       </h1>
