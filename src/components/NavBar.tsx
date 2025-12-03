@@ -63,7 +63,7 @@ const NavBar = () => {
                         hover:shadow-[0_0_10px_rgba(255,255,255,0.1)] 
                         transition-all duration-300"
                         href="/OmarResume.pdf"
-                        download="Omar_Resume.pdf"
+                            download="Omar_Resume.pdf"
                     >
                         My Resume
                     </Link>
@@ -108,16 +108,18 @@ const NavBar = () => {
                         </ul>
 
                         <a>
-                            <button
+                            <Link
                                 className="w-full flex cursor-pointer items-center justify-center gap-2 rounded-md px-6 py-3 font-medium text-white 
                                 bg-gradient-to-r from-[#161A31] to-[#06091F] 
                                 border border-[#22233a] 
                                 shadow-[inset_0_0_8px_rgba(255,255,255,0.05)] 
                                 hover:shadow-[0_0_10px_rgba(255,255,255,0.1)] 
                                 transition-all duration-300"
+                            href="/OmarResume.pdf"
+                            download="Omar_Resume.pdf"
                             >
                                 My Resume
-                            </button>
+                            </Link>
                         </a>
                     </div>
                 </div>

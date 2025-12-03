@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export const FloatingNav = ({
   navItems,
@@ -80,9 +81,10 @@ export const FloatingNav = ({
             <span className="text-sm">{navItem.name}</span>
           </a>
         ))}
-        <button className="border text-sm font-medium relative border-purple-500 text-white px-4 py-2 rounded-full hover:shadow-[0_0_10px_rgba(255,255,255,0.1)] transition-all">
-          <span>My Resume</span>
-        </button>
+        <Link href="/OmarResume.pdf"
+                download="Omar_Resume.pdf"  className="border text-sm font-medium relative border-purple-500 text-white px-4 py-2 rounded-full hover:shadow-[0_0_10px_rgba(255,255,255,0.1)] transition-all">
+                  My Resume
+        </Link>
       </motion.div>
 
       <motion.div
@@ -147,9 +149,12 @@ export const FloatingNav = ({
                   {navItem.name}
                 </a>
               ))}
-              <button className="border text-sm font-medium border-purple-500 text-white px-4 py-2 rounded-full hover:shadow-[0_0_10px_rgba(255,255,255,0.1)] transition-all mt-2">
-                <span>My Resume</span>
-              </button>
+              <Link 
+                href="/OmarResume.pdf"
+                download="Omar_Resume.pdf" 
+                className="border text-sm cursor-pointer font-medium border-purple-500 text-white px-4 py-2 rounded-full hover:shadow-[0_0_10px_rgba(255,255,255,0.1)] transition-all mt-2">
+                  My Resume
+              </Link>
             </div>
           </motion.div>
         )}
