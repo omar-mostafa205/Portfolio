@@ -51,7 +51,7 @@ export const projects = {
         category: "Web Application",
         description: "AI-enhanced design polishing tool. Upload UI designs and get AI-suggested improvements, color harmonization, and layout optimization. Demonstrates full-stack proficiency, AI integration, and advanced frontend techniques for visual refinement.",
         liveDemo: "https://polish-demo.com",
-        github: "https://github.com/yourusername/polish",
+        github: "https://github.com/omar-mostafa205/PolishUI",
         iconLists: ["/next.svg", "/tail.svg", "/ts.svg"]
       }
     ]

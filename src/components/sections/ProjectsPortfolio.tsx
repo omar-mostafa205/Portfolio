@@ -25,7 +25,7 @@ const ProjectsPortfolio = () => {
           <p className="text-[#c9abfa] text-sm font-medium uppercase tracking-wider mb-4">
             My Work
           </p>
-          <h1 className="text-5xl md:text-5xl font-semibold mb-6">
+          <h1 className="text-4xl md:text-5xl font-semibold mb-6">
             My Projects
           </h1>
           <p className="text-gray-400 text-lg">

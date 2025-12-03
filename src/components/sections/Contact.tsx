@@ -1,31 +1,12 @@
 "use client";
 import React, { useState } from 'react';
-import { Mail, Copy, Check } from 'lucide-react';
+import { Copy, Check } from 'lucide-react';
 import { TextHoverEffect } from '../ui/text-hover-effect';
+import ContactForm from '../ContactForm';
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    niche: '',
-    budget: '',
-    message: ''
-  });
   const [copied, setCopied] = useState(false);
   const email = 'omar.mostafa0205@gmail.com';
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you! I will get back to you within 24h.');
-  };
 
   const copyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -34,8 +15,8 @@ export default function ContactSection() {
   };
 
   return (
-<section id='contact' className="min-h-screen text-white p-8 md:p-16 lg:-mt-40">
-<div className="max-w-7xl mx-auto">
+    <section id='contact' className="min-h-screen text-white p-8 md:p-16 lg:-mt-40">
+      <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16">
           <div className="space-y-8">
             <p className="text-indigo-400 text-sm uppercase tracking-wider">Contact me</p>
@@ -64,76 +45,9 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
-          <div className="bg-gray-900 bg-opacity-50 rounded-2xl p-8 backdrop-blur-sm border border-gray-800">
-            <h2 className="text-2xl font-semibold mb-2">Enter your details</h2>
-            <p className="text-gray-400 mb-8">Let me know your details and i will get in touch with you within 24h.</p>
-            
-            <div className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="fullName"
-                  placeholder="Full Name"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  className="bg-black bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500 transition"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="bg-black bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500 transition"
-                />
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="niche"
-                  placeholder="Your Website Niche"
-                  value={formData.niche}
-                  onChange={handleChange}
-                  className="bg-black bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500 transition"
-                />
-                <input
-                  type="text"
-                  name="budget"
-                  placeholder="What is your budget?"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  className="bg-black bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500 transition"
-                />
-              </div>
-              
-              <div className="relative">
-                <textarea
-                  name="message"
-                  placeholder="Tell me more about your needs..."
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="4"
-                  className="w-full bg-black bg-opacity-50 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-indigo-500 transition resize-none"
-                ></textarea>
-                <div className="absolute bottom-3 right-3 flex gap-2">
-                  <button type="button" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition">
-                    <Mail className="w-4 h-4" />
-                  </button>
-                  <button type="button" className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center hover:bg-emerald-500 transition">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              
-              <button 
-              onClick={handleSubmit}
-              className="bg-[#9456f1] px-6 py-3 text-white rounded-md cursor-pointer w-full ">
-            Submit
-      </button>
-            </div>
+          
+          <div>
+            <ContactForm />
             
             <div className="mt-6 flex items-center justify-center gap-2 text-gray-400">
               <span>Or you can email me at:</span>
@@ -152,8 +66,9 @@ export default function ContactSection() {
           </div>
         </div>
       </div>
+      
       <div className='-mb-430 mt-40'>
-      <TextHoverEffect text="OMAR" />
+        <TextHoverEffect text="OMAR" />
       </div>
     </section>
   );
