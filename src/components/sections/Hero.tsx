@@ -39,25 +39,40 @@ export function Hero() {
           <div className="absolute inset-0 w-full h-full bg-[#00031a] [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
         </div>
 
-        <div className="flex flex-row items-center justify-center gap-8">
-          <button
-            className="
-              flex cursor-pointer items-center gap-2 rounded-md px-15 py-4 font-medium text-white 
-              bg-gradient-to-r from-[#161A31] to-[#06091F] border border-[#22233a] 
-              shadow-[inset_0_0_8px_rgba(255,255,255,0.05)] 
-              hover:shadow-[0_0_10px_rgba(255,255,255,0.1)] 
-              transition-all duration-300 text-lg
-            "
-            onClick={() => window.scrollTo({ top: 2200, behavior: "smooth" })}
-          >
-            See my Work
-          </button>
-          <button
-            className="bg-[#9456f1] px-15 py-4 text-white rounded-md cursor-pointer text-lg"
-            onClick={() => window.scrollTo({ top: 7600, behavior: "smooth" })}
-          >
-            Get in Touch
-          </button>
+        <div className="flex flex-col items-center justify-center gap-8 sm:flex-col md:flex-row lg:flex-row xl:flex-row ">
+        <button
+  className="
+    flex items-center justify-center gap-2
+    w-full md:w-auto
+    rounded-md
+    px-15 py-4
+    font-medium text-white text-lg
+    bg-gradient-to-r from-[#161A31] to-[#06091F]
+    border border-[#22233a]
+    shadow-[inset_0_0_8px_rgba(255,255,255,0.05)]
+    hover:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+    transition-all duration-300
+  "
+  onClick={() => window.scrollTo({ top: 2200, behavior: "smooth" })}
+>
+  See my Work
+</button>
+<button
+  className="
+    flex items-center justify-center gap-2
+    w-[360px] sm:w-[500px]
+    md:w-auto
+    rounded-md
+    px-15 py-4
+    text-white text-lg
+    bg-[#9456f1]
+    cursor-pointer
+    transition-all duration-300
+  "
+  onClick={() => window.scrollTo({ top: 7600, behavior: 'smooth' })}
+>
+  Get in Touch
+</button>
         </div>
       </div>
     </section>
