@@ -9,7 +9,7 @@ import Features from "@/components/sections/Features";
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-cente">
+    <main className="flex min-h-screen flex-col items-center justify-cente overflow-x-hidden">
       <NavBar /> 
       <Hero />
       <MovingImages />  
@@ -18,7 +18,6 @@ export default function HomePage() {
       <Approach />
       <TechArsenal />
       <ContactSection />
-   
     </main>
   );
 }
