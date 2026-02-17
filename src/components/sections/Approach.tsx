@@ -5,9 +5,9 @@ import { ArrowRight } from "lucide-react";
 const Approach = () => {
   return (
     <section id="approach" className="w-full py-20">
-      <h1 className="text-5xl font-bold flex items-center justify-start text-white mb-12 ml-30 ">
-        My <span className="text-white ml-2">approach</span>
-      </h1>
+<h1 className="text-5xl font-bold flex justify-center lg:justify-start text-white mb-12 lg:ml-30 text-center lg:text-left">
+  My <span className="text-white ml-2">approach</span>
+</h1>
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-6">
         <div className="relative inline-flex overflow-hidden rounded-[2.5rem] p-[1px] max-w-sm w-full">
           <span

@@ -2,78 +2,107 @@
 
 import React from "react";
 import { SparklesCore } from "@/components/ui/sparkles";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.18,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 export function Hero() {
   return (
     <section id="hero">
       <div className="h-[47rem] w-full bg-[#00031a] flex flex-col items-center justify-center overflow-hidden rounded-md">
-        <p className="text-[#ccabff] text-xl mb-6 -mt-40">
-          Hi! My name is Omar
-        </p>
-
-        <h1
-          className="
-            text-5xl sm:text-6xl md:text-7xl lg:text-9xl xl:text-9xl 
-            font-bold text-center text-white relative z-20 mb-7 shadow-2xl 
-            max-w-xl md:max-w-2xl lg:max-w-4xl px-4 break-words
-          "
+        <motion.div
+          className="flex flex-col items-center justify-center w-full"
+          variants={container}
+          initial="hidden"
+          animate="visible"
         >
-          AI Full Stack Developer
-        </h1>
+          <motion.p
+            variants={fadeUp}
+            className="text-[#ccabff] text-xl mb-6 -mt-40"
+          >
+            Hi! My name is Omar
+          </motion.p>
 
-        <div className="w-[70rem] h-46 relative">
-          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-[#ccabff] to-transparent h-[4px] w-3/4 blur-sm" />
-          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-[#ccabff] to-transparent h-[2px] w-3/4" />
-          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-[#ccabff] to-transparent h-[8px] w-1/4 blur-sm" />
-          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-[#ccabff] to-transparent h-[3px] w-1/4" />
+          <motion.h1
+            variants={fadeUp}
+            className="
+              text-5xl sm:text-6xl md:text-7xl lg:text-9xl xl:text-9xl 
+              font-bold text-center text-white relative z-20 mb-7 shadow-2xl 
+              max-w-xl md:max-w-2xl lg:max-w-4xl px-4 break-words
+            "
+          >
+            AI Full Stack Developer
+          </motion.h1>
 
-          <SparklesCore
-            background="transparent"
-            minSize={0.4}
-            maxSize={1}
-            particleDensity={1200}
-            className="w-full h-full"
-            particleColor="#FFFFFF"
-          />
+          <motion.div variants={fadeUp} className="w-[70rem] h-46 relative">
+            <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-[#ccabff] to-transparent h-[4px] w-3/4 blur-sm" />
+            <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-[#ccabff] to-transparent h-[2px] w-3/4" />
+            <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-[#ccabff] to-transparent h-[8px] w-1/4 blur-sm" />
+            <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-[#ccabff] to-transparent h-[3px] w-1/4" />
 
-          <div className="absolute inset-0 w-full h-full bg-[#00031a] [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
-        </div>
+            <SparklesCore
+              background="transparent"
+              minSize={0.4}
+              maxSize={1}
+              particleDensity={400}
+              className="w-full h-full"
+              particleColor="#FFFFFF"
+            />
 
-        <div className="flex flex-col items-center justify-center gap-8 sm:flex-col md:flex-row lg:flex-row xl:flex-row ">
-        <button
-  className="
-    flex items-center justify-center gap-2
-    w-full md:w-auto
-    rounded-md
-    px-15 py-4
-    font-medium text-white text-lg
-    bg-gradient-to-r from-[#161A31] to-[#06091F]
-    border border-[#22233a]
-    shadow-[inset_0_0_8px_rgba(255,255,255,0.05)]
-    hover:shadow-[0_0_10px_rgba(255,255,255,0.1)]
-    transition-all duration-300
-  "
-  onClick={() => window.scrollTo({ top: 2200, behavior: "smooth" })}
->
-  See my Work
-</button>
-<button
-  className="
-    flex items-center justify-center gap-2
-    w-[360px] sm:w-[500px]
-    md:w-auto
-    rounded-md
-    px-15 py-4
-    text-white text-lg
-    bg-[#9456f1]
-    cursor-pointer
-    transition-all duration-300
-  "
-  onClick={() => window.scrollTo({ top: 7600, behavior: 'smooth' })}
->
-  Get in Touch
-</button>
-        </div>
+            <div className="absolute inset-0 w-full h-full bg-[#00031a] [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]" />
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-col items-center justify-center gap-8 sm:flex-col md:flex-row lg:flex-row xl:flex-row"
+          >
+            <button
+              className="
+                flex items-center justify-center gap-2
+                w-full md:w-auto rounded-md px-15 py-4
+                font-medium text-white text-lg
+                bg-gradient-to-r from-[#161A31] to-[#06091F]
+                border border-[#22233a]
+                shadow-[inset_0_0_8px_rgba(255,255,255,0.05)]
+                hover:shadow-[0_0_10px_rgba(255,255,255,0.1)]
+                transition-all duration-300
+              "
+              onClick={() => window.scrollTo({ top: 2200, behavior: "smooth" })}
+            >
+              See my Work
+            </button>
+            <button
+              className="
+                flex items-center justify-center gap-2
+                w-[360px] sm:w-[500px] md:w-auto rounded-md px-15 py-4
+                text-white text-lg bg-[#9456f1]
+                cursor-pointer transition-all duration-300
+              "
+              onClick={() => window.scrollTo({ top: 7600, behavior: "smooth" })}
+            >
+              Get in Touch
+            </button>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
