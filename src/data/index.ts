@@ -210,3 +210,26 @@ export const projects = {
       color: "#FF6C37"
     }
   ];
+
+ export  const NAV_IETMS = [
+    {
+        name: "Tech stack",
+        link: "#tech",
+    },
+    {
+        name: "Projects",
+        link: "#projects",
+    },
+    {
+        name: "Contact",
+        link: "#contact",
+    }       
+];
+
+export const IMAGES = [
+  { src: "/codemind.png", alt: "Codemind" },
+  { src: "/docy.png", alt: "Docy" },
+  { src: "/codelet.png", alt: "Codelet" },
+  { src: "/planna.png", alt: "Planna" },
+  { src: "/polish.png", alt: "Polish" },
+]

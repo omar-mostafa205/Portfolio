@@ -140,9 +140,4 @@
   [style*="transform"] {
     transform: translate3d(0, 0, 0);
   }
-
-  /* Containment for isolated components */
-  section {
-    contain: layout style paint;
-  }
 }

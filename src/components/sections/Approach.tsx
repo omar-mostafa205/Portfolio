@@ -5,14 +5,14 @@ import { ArrowRight } from "lucide-react";
 const Approach = () => {
   return (
     <section id="approach" className="w-full py-20">
-<h1 className="text-5xl font-bold flex justify-center lg:justify-start text-white mb-12 lg:ml-30 text-center lg:text-left">
+      <h1 className="text-5xl font-bold flex justify-center lg:justify-start text-white mb-12 lg:ml-30 text-center lg:text-left">
   My <span className="text-white ml-2">approach</span>
-</h1>
+      </h1>
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-6">
         <div className="relative inline-flex overflow-hidden rounded-[2.5rem] p-[1px] max-w-sm w-full">
           <span
             className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite]
-           bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"
+          bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"
           /> 
           <CardSpotlight className="w-full p-8 lg:h-[28rem] relative flex flex-col justify-between rounded-[41px]">
             <div>
@@ -60,7 +60,7 @@ const Approach = () => {
         <div className="relative inline-flex overflow-hidden rounded-[2.5rem] p-[1px] max-w-sm w-full">
           <span
             className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite]
-           bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"
+          bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"
           />
           <CardSpotlight className="w-full p-8 lg:h-[28rem] relative flex flex-col justify-between rounded-[41px] ">
             <div>

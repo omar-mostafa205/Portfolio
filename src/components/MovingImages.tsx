@@ -1,19 +1,13 @@
 "use client"
 import React from 'react'
 import { motion } from "framer-motion"
+import { IMAGES } from '@/data'
 
 const MovingImages = () => {
-  const images = [
-    { src: "/codemind.png", alt: "Codemind" },
-    { src: "/docy.png", alt: "Docy" },
-    { src: "/codelet.png", alt: "Codelet" },
-    { src: "/planna.png", alt: "Planna" },
-    { src: "/polish.png", alt: "Polish" },
-  ]
 
-  const tripleImages = [...images, ...images, ...images]
+  const tripleImages = [...IMAGES, ...IMAGES, ...IMAGES]
 
-  const singleSetWidth = images.length * 522
+  const singleSetWidth = IMAGES.length * 522
 
   return (
     <div className="w-full bg-[#00031a] py-20 overflow-hidden -mt-30">

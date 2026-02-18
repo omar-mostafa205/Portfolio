@@ -4,24 +4,11 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { FloatingNav } from './ui/floating-navbar';
+import { NAV_IETMS } from '@/data';
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const navItems = [
-        {
-            name: "Tech stack",
-            link: "#tech",
-        },
-        {
-            name: "Projects",
-            link: "#projects",
-        },
-        {
-            name: "Contact",
-            link: "#contact",
-        }       
-    ];
 
     function handleSmoothScroll(e, link) {
         e.preventDefault();
@@ -41,7 +28,7 @@ const NavBar = () => {
 
                 <div className='hidden md:block'>
                     <ul className='flex flex-row text-center gap-10'>
-                        {navItems.map((item) => (
+                        {NAV_IETMS.map((item) => (
                             <li key={item.name} className='hover:text-[#ccabff] cursor-pointer transition-colors duration-200'>
                                 <a 
                                     href={item.link}
@@ -95,7 +82,7 @@ const NavBar = () => {
                 >
                     <div className='flex flex-col h-full pt-20 px-8'>
                         <ul className='flex flex-col gap-6 mb-8'>
-                            {navItems.map((item) => (
+                            {NAV_IETMS.map((item) => (
                                 <li key={item.name} className='hover:text-[#ccabff] cursor-pointer transition-colors duration-200 text-lg'>
                                     <a 
                                         href={item.link}
@@ -125,7 +112,7 @@ const NavBar = () => {
                 </div>
             </nav>
 
-            <FloatingNav navItems={navItems} />
+            <FloatingNav navItems={NAV_IETMS} />
         </>
     );
 };

@@ -1,15 +1,57 @@
-import CodeSnippet from "../CodeSnippet";
+"use client"
+import { motion } from "framer-motion"
+import CodeSnippet from "../CodeSnippet"
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+}
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+}
 
 export default function Features() {
-    return (
-      <section id="features">
-      <div className=" py-24 sm:py-32">
-        <div className="mx-auto max-w-8xl px-6 lg:max-w-8xl lg:px-8">
-          <h2 className="text-center text-base/7 font-semibold text-[#b29be1]">Build Full Stack</h2>
-          <p className="mx-auto mt-2 max-w-3xl text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
+  return (
+    <section id="features">
+      <div className="py-24 sm:py-32">
+        <motion.div
+          className="mx-auto max-w-8xl px-6 lg:max-w-8xl lg:px-8"
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.h2
+            variants={fadeUp}
+            className="text-center text-base/7 font-semibold text-[#b29be1]"
+          >
+            Build Full Stack
+          </motion.h2>
+          <motion.p
+            variants={fadeUp}
+            className="mx-auto mt-2 max-w-3xl text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl"
+          >
             Complete toolkit for modern Apps
-          </p>
-          <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+          </motion.p>
+
+          <motion.div
+            variants={fadeUp}
+            className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2"
+          >
+            {/* Responsive Design Card */}
             <div className="relative lg:row-span-2">
               <div className="absolute inset-px rounded-lg bg-gray-900 lg:rounded-l-4xl" />
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
@@ -34,6 +76,7 @@ export default function Features() {
               <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/10 lg:rounded-l-4xl" />
             </div>
 
+            {/* Performance Card */}
             <div className="relative max-lg:row-start-1">
               <div className="absolute inset-px rounded-lg bg-gray-900 max-lg:rounded-t-4xl" />
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
@@ -54,6 +97,7 @@ export default function Features() {
               <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/10 max-lg:rounded-t-4xl" />
             </div>
 
+            {/* Authentication Card */}
             <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
               <div className="absolute inset-px rounded-lg bg-gray-900" />
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
@@ -74,6 +118,7 @@ export default function Features() {
               <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/10" />
             </div>
 
+            {/* RESTful & GraphQL APIs Card */}
             <div className="relative lg:row-span-2">
               <div className="absolute inset-px rounded-lg bg-gray-900 max-lg:rounded-b-4xl lg:rounded-r-4xl" />
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
@@ -86,15 +131,14 @@ export default function Features() {
                   </p>
                 </div>
                 <div className="relative min-h-120 w-full grow">
-                    <CodeSnippet />
+                  <CodeSnippet />
                 </div>
               </div>
               <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm outline outline-white/10 max-lg:rounded-b-4xl lg:rounded-r-4xl" />
             </div>
-
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-      </section>
-    )
-  }
+    </section>
+  )
+}
